@@ -1,0 +1,82 @@
+/* Reset margin and padding for all elements */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0px;
+    padding: 0px;
+    /* background-color: wheat; */
+}
+
+/* Navbar styling */
+.navbar {
+    height: 7rem;
+    width: 100vw;
+    background-color: #1b1b1b;
+    display: flex; /* Make navbar a flex container */
+     /* Align items vertically */
+    justify-content: space-between; /* Space out head and links */
+    /* border-bottom-left-radius: 10%; */
+    /* border-bottom-right-radius: 10%; */
+}
+
+/* Head section styling */
+.head {
+    color: #fff;
+    padding-left: 2rem;
+    padding-top: 2rem;
+}
+
+/* Color for span inside head */
+.head span {
+    color: aqua;
+}
+
+/* Navigation links styling */
+.nav-links {
+    display: flex;
+    justify-content: flex-end; /* Align the links to the right */
+    margin-top: 3rem; /* Push the nav-links to the bottom */
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+}
+
+/* List styling */
+.nav-links .nav-list {
+    list-style: none;
+    display: flex; /* Display list items in a row */
+}
+
+/* Styling for each navigation item */
+.nav-links .nav-item {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 1rem; /* Add space around links */
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 10px; /* Rounded corners */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+    position: relative;
+    margin: 1rem;
+}
+
+/* .nav-links .nav-item {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem; 
+    font-size: 1.2rem;
+} */
+
+/* Add hover effect for the links */
+.nav-links .nav-item:hover {
+    color: aqua;
+    background-color: #000; /* Add a slight background on hover */
+    box-shadow: 0 0 10px 2px aqua; /* Glow effect */
+}
