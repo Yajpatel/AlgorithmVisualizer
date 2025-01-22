@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="icon" href="../AlgoVis/Images/Fevicon.webp" />
+    <!-- Css file -->
+    <link rel="stylesheet" type="text/css" href="../css/SortingVisualizer.css">
+    <!-- Fevicon -->
+    <link rel="icon" type="image/x-icon" href="../AlgoVis/Images/Fevicon.webp">
+    <!-- for icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="content">
+        <!-- Wrapper for the logo -->
+        <div class="nav-logo">
+            <div class="logo">
+                <h1>Algorithm<span>Visualization</span></h1>
+            </div>
+        </div>
+
+        <!-- Wrapper for algorithm selector -->
+        <div class="nav-items">
+            <ul>
+                <li>
+                    <select name="algo" id="algoselected">
+                        <option value="" disabled selected>CHOOSE ALGORITHM</option>
+                        <option value="bubble">BUBBLE</option>
+                        <option value="selection">SELECTION</option>
+                        <option value="insertion">INSERTION</option>
+                        <option value="quick">QUICK</option>
+                        <option value="merge">MERGE</option>
+                        <option value="heap">HEAP</option>
+                    </select>
+                </li>
+
+                <!-- <li>
+                    <a>
+                        <button id="arr_generate">Reset Array!</button>
+                    </a>
+                </li> -->
+                <li>
+                    <button id="arr_randomize">Randomize!</button>
+                </li>
+                <li>
+                    <button id="arr_sort">Sort!</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- New section for Size and Speed -->
+    <section class="controls">
+        <div class="control-item">
+            <label for="arr_size">Size</label>
+            <input id="arr_size" type="range" min="15" max="30" step="1" value="20">
+            <!-- <span class="tooltip" id="size-tooltip">20</span> -->
+        </div>
+        <div class="control-item">
+            <label for="arr_speed">Speed</label>
+            <input id="arr_speed" type="range" min="1" max="10" step="1" value="8">
+            <!-- <span class="tooltip" id="speed-tooltip">8</span> -->
+        </div>
+    </section>  
+    
+
+    <div class="array-container"></div>
+
+    <script src="../js/sorting/main.js"></script>
+    <script src="../js/sorting/visualization.js"></script>
+    <script src="../js/sorting/selection.js"></script>
+    <script src="../js/sorting/bubble.js"></script>
+    <script src="../js/sorting/insertion.js"></script>
+    <script src="../js/sorting/quick.js"></script>
+    <script src="../js/sorting/merge.js"></script>
+    <script src="../js/sorting/heap.js"></script>
+</body>
+</html>

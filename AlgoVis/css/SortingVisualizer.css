@@ -1,0 +1,153 @@
+/* SortingVisualizer.css */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0px;
+    padding: 0px;
+    /* background-color: wheat; */
+}
+/* Set background color for the navigation bar */
+nav.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2d89ef;
+    color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+.nav-logo span {
+    color: #ffcc00;
+}
+
+.nav-items ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-items li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-items select,
+.nav-items button {
+    font-size: 14px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: #2d89ef;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-items select:hover,
+.nav-items button:hover {
+    background-color: #ffcc00;
+    color: #2d89ef;
+}
+
+.nav-items select {
+    padding: 8px;
+}
+
+/* Controls Section */
+section.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+    background-color: #f9f9f9;
+    border-top: 2px solid #e0e0e0;
+}
+
+.control-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.control-item label {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.control-item input[type="range"] {
+    width: 160px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.tooltip {
+    font-size: 12px;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Button styling */
+/* #arr_generate, */
+#arr_randomize,
+#arr_sort {
+    background-color: #ffffff;
+    border: 2px solid #2d89ef;
+    border-radius: 5px;
+    padding: 8px 16px;
+    color: #2d89ef;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* #arr_generate:hover, */
+#arr_randomize:hover,
+#arr_sort:hover {
+    background-color: #2d89ef;
+    color: white;
+}
+
+.array-container{
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-end; */
+    width: 95%;
+    height: 400px; /* Adjust height as needed */
+    border: 1px solid black;
+    margin: auto;
+    /* flex-wrap: wrap; */
+    position: relative;
+}
+
+.bar{
+    width: 2rem; /* Width of each bar */
+    /* margin-top: 5px; */
+    margin-left: 5px;
+    background-color: #5bc9b1;
+    display: flex;
+    justify-content: center;
+    color: #f9f9f9;
+    transition: transform 0.5s ease, background-color 0.3s ease; /* Smooth movement and color change */
+}
