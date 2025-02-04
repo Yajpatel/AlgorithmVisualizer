@@ -132,10 +132,10 @@ section.controls {
 .array-container{
     display: flex;
     justify-content: center;
-    /* align-items: flex-end; */
+    align-items: flex-end;
     width: 95%;
-    height: 400px; /* Adjust height as needed */
-    border: 1px solid black;
+    height: 300px; /* Adjust height as needed */
+    /* border: 1px solid black; */
     margin: auto;
     /* flex-wrap: wrap; */
     position: relative;
@@ -149,5 +149,5 @@ section.controls {
     display: flex;
     justify-content: center;
     color: #f9f9f9;
-    transition: transform 0.5s ease, background-color 0.3s ease; /* Smooth movement and color change */
+    /* transition: transform 0.5s ease, background-color 0.3s ease; Smooth movement and color change */
 }
