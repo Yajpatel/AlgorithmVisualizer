@@ -149,5 +149,6 @@ section.controls {
     display: flex;
     justify-content: center;
     color: #f9f9f9;
-    /* transition: transform 0.5s ease, background-color 0.3s ease; Smooth movement and color change */
+    transition: transform 0.5s ease, background-color 0.3s ease; 
+    /* Smooth movement and color change */
 }

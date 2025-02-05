@@ -83,40 +83,11 @@ function sort(){
 //     }
 // }
 
-async function swapBars(index1, index2) {
-    // Access bar elements by their DOM references
-    let bar1 = bars[index1];
-    let bar2 = bars[index2];
 
-    // Calculate their current positions 
-    let pos1 = bar1.offsetLeft;
-    let pos2 = bar2.offsetLeft;
 
-    // Apply CSS transitions for smooth swapping
-    bar1.style.transition = "transform 0.5s";
-    bar2.style.transition = "transform 0.5s";
 
-    // Apply the transform to swap positions
-    bar1.style.transform = `translateX(${pos2 - pos1}px)`;
-    bar2.style.transform = `translateX(${pos1 - pos2}px)`;
 
-    // Wait for the transition to complete
-    // this time should be more else that swap color will change early
-    // this is for red color to be visible
-    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // Temporarily disable transitions before DOM manipulation
-    bar1.style.transition = "none";
-    bar2.style.transition = "none";
 
-    // Reset transforms to avoid visual glitches
-    bar1.style.transform = "translateX(0)";
-    bar2.style.transform = "translateX(0)";
 
-    bar1.parentNode.insertBefore(bar2, bar1);
 
-    // Update the bars array
-    let temp = bars[index1];
-    bars[index1] = bars[index2];
-    bars[index2] = temp;
-}
