@@ -19,7 +19,7 @@ async function bubblesort() {
                 array[j + 1] = temp;
 
                 // Swap the bars visually
-                await swapBars(j, j + 1);
+                await swapBarsforbubble(j, j + 1);
             }
 
             // Reset color after comparison
@@ -33,7 +33,7 @@ async function bubblesort() {
     bars[0].style.backgroundColor = "orange";
 }
 
-async function swapBars(index1, index2) {
+async function swapBarsforbubble(index1, index2) {
     // Access bar elements by their DOM references
     let bar1 = bars[index1];
     let bar2 = bars[index2];
