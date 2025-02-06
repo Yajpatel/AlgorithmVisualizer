@@ -3,9 +3,28 @@ async function selectionsort(){
     console.log(bars.map(bar => bar.style.height));
     for(let i = 0;i<array.length;i++){
         let min = i;
+
+        bars[min].style.backgroundColor = "magenta";
+
         for(j = i+1;j<array.length;j++){
-            if(array[min] > array[j]){
+
+            bars[j].style.backgroundColor = "red";
+            // for red color to be visible
+            await new Promise((resolve) => setTimeout(resolve, 500));
+
+            if (array[min] > array[j]) {
+                // If a new minimum is found, revert the previous min (unless it's the start index)
+                if (min !== i) {
+                    bars[min].style.backgroundColor = "";
+                    await new Promise((resolve) => setTimeout(resolve, 100));
+                }
                 min = j;
+                bars[min].style.backgroundColor = "magenta";
+                // await new Promise((resolve) => setTimeout(resolve, 500));
+            } else {
+                // if not the min one set to default
+                bars[j].style.backgroundColor = "";
+                await new Promise((resolve) => setTimeout(resolve, 100));
             }
         }
         let temp = array[min];
@@ -14,10 +33,18 @@ async function selectionsort(){
 
         // Swap bars visually
         await swapbars(i, min);
-        await new Promise((resolve) => setTimeout(resolve, 1000));  
+        
+        // After swap, mark the sorted bar in blue.
+        // (You may choose to mark both swapped bars blue, but here we mark the bar at the sorted index.)
+        bars[i].style.backgroundColor = "blue";
+
+        await new Promise((resolve) => setTimeout(resolve, 500));  
     }
     console.log(array);
     console.log("Sorted bars array:", bars.map(bar => bar.style.height));
+    for (let i = 0; i < bars.length; i++) {
+        bars[i].style.backgroundColor = "orange";
+    }
 }
 
 
