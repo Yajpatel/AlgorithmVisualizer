@@ -10,21 +10,24 @@ async function selectionsort(){
 
             bars[j].style.backgroundColor = "red";
             // for red color to be visible
-            await new Promise((resolve) => setTimeout(resolve, 500));
+            await new Promise((resolve) => setTimeout(resolve, arraySpeed));
 
             if (array[min] > array[j]) {
-                // If a new minimum is found, revert the previous min (unless it's the start index)
+                // If a new minimum is found reset the previous min
+                // remove color from min if new min found
                 if (min !== i) {
                     bars[min].style.backgroundColor = "";
-                    await new Promise((resolve) => setTimeout(resolve, 100));
+                    await new Promise((resolve) => setTimeout(resolve, arraySpeed));
                 }
+                //to give color to new min found 
                 min = j;
                 bars[min].style.backgroundColor = "magenta";
-                // await new Promise((resolve) => setTimeout(resolve, 500));
+                //can be commented
+                await new Promise((resolve) => setTimeout(resolve, arraySpeed));
             } else {
                 // if not the min one set to default
                 bars[j].style.backgroundColor = "";
-                await new Promise((resolve) => setTimeout(resolve, 100));
+                await new Promise((resolve) => setTimeout(resolve, arraySpeed));
             }
         }
         let temp = array[min];
@@ -32,13 +35,12 @@ async function selectionsort(){
         array[i] = temp;
 
         // Swap bars visually
-        await swapbars(i, min);
+        await swapBarsforSelection(i, min);
         
-        // After swap, mark the sorted bar in blue.
-        // (You may choose to mark both swapped bars blue, but here we mark the bar at the sorted index.)
+        // After swap marking the sorted bar in blue
         bars[i].style.backgroundColor = "blue";
 
-        await new Promise((resolve) => setTimeout(resolve, 500));  
+        await new Promise((resolve) => setTimeout(resolve, arraySpeed));  
     }
     console.log(array);
     console.log("Sorted bars array:", bars.map(bar => bar.style.height));
@@ -48,7 +50,7 @@ async function selectionsort(){
 }
 
 
-async function swapbars(index1, index2) {
+async function swapBarsforSelection(index1, index2) {
     // Access bar elements by their DOM references
     let bar1 = bars[index1];
     let bar2 = bars[index2];
@@ -68,7 +70,7 @@ async function swapbars(index1, index2) {
     // Wait for the transition to complete
     // this time should be more else that swap color will change early
     // this is for red color to be visible
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, arraySpeed));
 
     // Temporarily disable transitions before DOM manipulation
     bar1.style.transition = "none";
@@ -78,7 +80,7 @@ async function swapbars(index1, index2) {
     bar1.style.transform = "translateX(0)";
     bar2.style.transform = "translateX(0)";
 
-    swapDivs(bar1,bar2)
+    swapDivsforSelection(bar1,bar2)
 
     // Update the bars array
     let temp = bars[index1];
@@ -87,7 +89,7 @@ async function swapbars(index1, index2) {
 }
 
 
-function swapDivs(id1, id2) {
+function swapDivsforSelection(id1, id2) {
     let div1 = id1;
     let div2 = id2;
 

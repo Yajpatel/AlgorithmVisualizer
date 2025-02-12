@@ -23,8 +23,6 @@ body {
     display: flex; /* Make navbar a flex container */
      /* Align items vertically */
     justify-content: space-between; /* Space out head and links */
-    /* border-bottom-left-radius: 10%; */
-    /* border-bottom-right-radius: 10%; */
 }
 
 /* Head section styling */
