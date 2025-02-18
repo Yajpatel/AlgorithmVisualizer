@@ -1,11 +1,12 @@
-// Global variables for array and declaration
+// Global variables for array and declarationb
 let array = [];
-let arraySize = 10; // Default size
+let arraySize = 18; // Default size
 let arraySpeed = 500; // Default speed
-// let c_delay = 2000;
-const randomizeBtn = document.querySelector("#arr_randomize");
-const sortBtn = document.querySelector("#arr_sort");
-const algoSelect = document.querySelector("#algoselected");
+
+
+const resetbtn = document.getElementById("reset");
+const searchbtn = document.getElementById("search");
+const searchSelect = document.getElementById("searchselected");
 
 const speed = document.getElementById("arr_speed");
 const size = document.getElementById("arr_size");
@@ -67,18 +68,15 @@ function updateSize(sizeValue) {
             generateArray();
         break; 
         default: arraySize = 10; // Default case
-            // generateArray();
+            generateArray();
         break;
     }
 }
 
-// Initialize the array when the page loads
+// to initialize the array when the page loads
 window.onload = () => generateArray();
 
-// Store the bars in an array for later reference
-let bars = [];
-
-randomizeBtn.addEventListener("click",()=>{
+resetbtn.addEventListener("click",()=>{
     generateArray()
 });
 
@@ -87,50 +85,54 @@ randomizeBtn.addEventListener("click",()=>{
 function generateArray() {
     array = [];
     for (let i = 0; i < arraySize; i++) {
-        array.push(Math.floor(Math.random() * 220) + 30);
+        array.push(Math.floor(Math.random() * 100));
     }
     visualizearray(); // Visualize the array
 }
 
 function visualizearray(){
-    const container = document.querySelector(".array-container");
-    container.innerHTML = ''; // Clear any existing bars
-    
-    bars = [];
-    // Calculate the width of each bar based on array size
-    // const barWidth = Math.floor(container.offsetWidth / array.length) - 2; // Subtract 2 for margin spacing
-    
-    // Create bars for each array element
-    for (let i = 0; i < array.length; i++) {
-        const bar = document.createElement('div');
-        bar.classList.add('bar');
-        bar.style.height = `${array[i]}px`; // Set height based on value
-        // bar.style.width = `${barWidth}px`; // Set dynamic width
-        bar.innerHTML = array[i];
-        container.appendChild(bar);
-        bars.push(bar);
+    let container = document.getElementById("x");
+    container.innerHTML = "";
+    // container.classList.add('searchcontainer');
+
+    for(let i = 0;i<arraySize;i++){
+        let box = document.createElement("div");
+        let innerbox = document.createElement("div");
+        box.classList.add('box');
+        box.innerHTML = array[i];
+        innerbox.classList.add('innerbox');
+        innerbox.innerHTML = i;
+        container.appendChild(box);
+        box.appendChild(innerbox);
     }
 }
-
-sortBtn.addEventListener("click",()=>{
-    sort();
+searchbtn.addEventListener("click", () => {
+    inputvalue(); // Call the inputvalue function when the search button is clicked
 });
-function sort(){
-    console.log(algoSelect.value);
-    switch(algoSelect.value){
-        case "bubble" : bubblesort();
-        break;
-        case "selection" : selectionsort();
-        break;
-        case "insertion" : insertionsort();
-        break;
-        case "quick" : quicksort();
-        break;
-        case "merge" : mergesort();
-        break;
-        // case "heap" : heapsort();
-        // break;
-        default : alert("please select algo first");
-        break;
+
+function inputvalue() {
+    let target = document.getElementById("searchKey").value // Get the number input value
+
+    // Check if a input number is entered
+    if (!target) {
+        alert("Please enter a value to search.");
+        return;
+    }
+    
+    // Call the search function if input number is not empty
+    search(target);
+}
+
+function search(target) {
+    switch (searchSelect.value) {
+        case "Linear":
+            linearSearch(parseInt(target)); 
+            break;
+        case "Binary":
+            binarySearch(parseInt(target)); 
+            break;
+        default:
+            alert("Please select a search algorithm.");
+            break;
     }
 }

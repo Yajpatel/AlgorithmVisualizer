@@ -1,0 +1,254 @@
+/* SortingVisualizer.css */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Main Navbar */
+nav.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1b1b1b;
+    padding: 15px 30px;
+    height: 7rem;
+    width: 100vw;
+}
+
+.nav-logo h1 {
+    font-weight: bold;
+    color: white;
+    font-size: 2rem;
+}
+
+.nav-logo h1 span {
+    color: aqua;
+}
+
+/* Navigation Items */
+.nav-items ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-top: 2rem; /* Push the nav-links to the bottom */
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+}
+
+.nav-items ul li {
+    display: inline;
+}
+.nav-items select,
+.nav-items .control-item {
+    background-color: #1b1b1b;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* border: 1px solid white; */
+    border-radius: 5px;
+}
+.nav-items select:hover,
+.nav-items .control-item:hover {
+    color: aqua;
+    background-color: black;
+    box-shadow: 0 0 10px 2px aqua;
+}
+
+/* ========================================== */
+
+/* ======== Heading Styling ======== */
+#heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* ======== Search Container Styling ======== */
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0,0.5);
+    text-align: center;
+}
+
+/* ======== Input Box Styling ======== */
+.number-input {
+    width: 90%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 6px;
+    text-align: center;
+    transition: 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0,0.8);
+}
+
+.number-input:focus {
+    border-color: rgb(10, 124, 245);
+    box-shadow: 0px 0px 5px rgb(10, 124, 245);
+}
+
+/* ======== Buttons Styling ======== */
+.search {
+    /* width: 100%; */
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+#search {
+    background-color: #007bff;
+    color: white;
+}
+
+#search:hover {
+    background-color: #0056b3;
+}
+
+#reset {
+    background-color: #dc3545;
+    color: white;
+}
+
+#reset:hover {
+    background-color: #a71d2a;
+}
+
+.array-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    position: relative;
+    border: 1px solid black;
+    margin: 20px auto;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+/* for container divs */
+.box{
+    height: 70px;
+    width: 70px;
+    position: relative;
+    background-color: #D4EBF8;
+    margin: 10px;
+    /* display: flex;
+    justify-content: center;
+    align-items:flex-start; */
+    border-radius: 10%;
+    text-align: center;
+    padding-top: 5px;
+}
+.innerbox{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    bottom: 5px;
+    left: 30%;
+    background-color: #1F509A;
+    color: #fff;
+    border-radius: 10%; 
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ======== Responsive Design ======== */
+/* @media (max-width: 768px) {
+    .nav-items {
+        flex-direction: column;
+        align-items: center;
+    }
+} */
+@media screen and (max-width: 768px) {
+    nav.content {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        height: auto;
+    }
+
+    .nav-logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .nav-items ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .nav-items select,
+    .nav-items .control-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    #heading {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .number-input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .search {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .array-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    
+}
+/* ============== js ===========*/
+/* .default{
+    background-color: #D4EBF8;
+    height: 70px;
+    width: 70px;
+} */
+.iterate{
+    background-color: red;
+}
+.grow{
+    transform: scale(1.4);
+    background-color: green;
+    margin: 20px;
+    transition: all 0.5s ease;
+}
