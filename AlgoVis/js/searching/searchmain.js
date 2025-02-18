@@ -136,3 +136,21 @@ function search(target) {
             break;
     }
 }
+
+searchSelect.oninput = ()=>{
+    heading();
+}
+function heading(){
+    let heading = document.getElementById('heading');
+    switch (searchSelect.value) {
+        case "Linear":
+            heading.innerHTML = "Linear Search Visualizer[0(n)]";
+            break;
+        case "Binary":
+            heading.innerHTML = "Binary Search Visualizer [0(logn)]";
+            break;
+        default:
+            heading.innerHTML = "Let start searching";
+            break;
+    }
+}
