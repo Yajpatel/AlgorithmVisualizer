@@ -47,7 +47,7 @@
                     </a>
                 </li> -->
                 <li>
-                    <button id="arr_randomize">Randomize!</button>
+                    <button id="arr_randomize">Reset!</button>
                 </li>
                 <li>
                     <button id="arr_sort">Sort!</button>
@@ -57,19 +57,35 @@
     </nav>
 
     <!-- New section for Size and Speed -->
-    <div class="controls-navbar">
-        <div class="control-item">
-            <label for="arr_size">Size</label>
-            <input id="arr_size" type="range" min="3" max="30" step="3" value="10">
-            <!-- <span class="tooltip" id="size-tooltip">20</span> -->
+    <div class="labelandcontrol">
+        <div class="label">
+            <div class="l-1 ">
+                <button class="color1"></button>
+                <span class="label1"></span>
+            </div>
+            <div class="l-2">
+                <button class="color2"></button>
+                <span class="label2"></span>
+            </div>
+            <div class="l-3">
+                <button class="color3"></button>
+                <span class="label3"></span>
+            </div>
         </div>
-        <div class="control-item">
-            <label for="arr_speed">Speed</label>
-            <input id="arr_speed" type="range" min="1" max="10" step="1" value="5">
-            <!-- <span class="tooltip" id="speed-tooltip">8</span> -->
-        </div>
-    </div>  
-    
+
+        <div class="controls-navbar">
+            <div class="control-item">
+                <label for="arr_size">Size</label>
+                <input id="arr_size" type="range" min="3" max="30" step="3" value="10">
+                <!-- <span class="tooltip" id="size-tooltip">20</span> -->
+            </div>
+            <div class="control-item">
+                <label for="arr_speed">Speed</label>
+                <input id="arr_speed" type="range" min="1" max="10" step="1" value="5">
+                <!-- <span class="tooltip" id="speed-tooltip">8</span> -->
+            </div>
+        </div>  
+    </div>
 
     <div class="array-container"></div>
 

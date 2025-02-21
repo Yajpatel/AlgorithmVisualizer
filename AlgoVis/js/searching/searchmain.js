@@ -152,14 +152,53 @@ function search(target) {
             break;
     }
 }
+//for label searchselect.oninput
+searchSelect.oninput = ()=> {
 
-searchSelect.oninput = ()=>{
+    let color1 = document.querySelector(".color1");
+    let label1 = document.querySelector(".label1");
+    
+    let color2 = document.querySelector(".color2");
+    let label2 = document.querySelector(".label2");
+    
+    let color3 = document.querySelector(".color3");
+    let label3 = document.querySelector(".label3");
+
+    if (searchSelect.value === "Linear") {
+        // Linear Search
+        color1.style.backgroundColor = "red";  // Element Visited
+        label1.textContent = "Element Visited";
+
+        color2.style.backgroundColor = "green"; // Element Found
+        label2.textContent = "Element Found";
+
+        color3.style.visibility = "hidden"; // Hide
+        label3.style.visibility = "hidden";
+    } 
+    else if (searchSelect.value === "Binary") {
+        // Binary Search
+        color1.style.backgroundColor = "red";  // Iterating
+        label1.textContent = "Iterating";
+
+        color2.style.backgroundColor = "yellow"; // Element Visited
+        label2.textContent = "Element Visited";
+
+        color3.style.backgroundColor = "green"; // Element Found
+        label3.textContent = "Element Found";
+
+        color3.style.visibility = "visible"; // Show
+        label3.style.visibility = "visible";
+    }
     heading();
     if (searchSelect.value === "Binary") {
         array.sort((a, b) => a - b); // Sort the array for Binary Search
     }
     visualizearray();
-}
+};
+//for Binary or Linear
+// searchSelect.oninput = ()=>{
+    
+// }
 
 function heading(){
     let heading = document.getElementById('heading');

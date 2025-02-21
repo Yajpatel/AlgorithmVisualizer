@@ -1,4 +1,5 @@
 async function mergesort() {
+    isRunning = true;
     console.log("Initial Array:", array);
 
     let initialHeights = bars.map(bar => parseInt(bar.style.height));

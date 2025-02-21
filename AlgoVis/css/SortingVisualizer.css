@@ -95,15 +95,40 @@ select:hover,
 /* ==================================================================== */
 
 /* =========================================== */
-/* Secondary Navbar for Size & Speed */
-.controls-navbar {
+.labelandcontrol{
     height: 4rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 10px 0;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    /* margin: 20px; */
+}
+.label{
+    display: flex;
+}
+.label div{
+    margin: 10px;
+}
+.color1{
+    height: 20px;
+    width: 20px;
+}
+.color2{
+    height: 20px;
+    width: 20px;
+}
+.color3{
+    height: 20px;
+    width: 20px;
+}
+/* ========================================= */
+/* Secondary Navbar for Size & Speed */
+.controls-navbar {
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: center;
+    padding: 10px 0;
 }
 
 .controls-navbar .control-item {

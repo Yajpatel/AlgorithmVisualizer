@@ -1,4 +1,5 @@
 async function quicksort(){
+    isRunning = true;
     console.log("Initial array " + array);
     await qs(array,0,array.length-1);
     console.log("sorted Array "+array);

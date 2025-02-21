@@ -149,7 +149,7 @@ nav.content {
     width: 80%;
     height: auto;
     position: relative;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 20px auto;
     flex-wrap: wrap;
     padding: 20px;
@@ -191,6 +191,24 @@ nav.content {
         align-items: center;
     }
 } */
+.label{
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.color1{
+    height: 20px;
+    width: 20px;
+}
+.color2{
+    height: 20px;
+    width: 20px;
+}
+.color3{
+    height: 20px;
+    width: 20px;
+}
+
 @media screen and (max-width: 768px) {
     nav.content {
         flex-direction: column;
@@ -264,3 +282,4 @@ nav.content {
     margin: 20px;
     transition: all 0.5s ease;
 }
+

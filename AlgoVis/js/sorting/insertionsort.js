@@ -1,4 +1,5 @@
 async function insertionsort() {
+    isRunning = true;
     let n = array.length;
     console.log("Initial Array:", array);
     for(let i = 0;i<array.length;i++){

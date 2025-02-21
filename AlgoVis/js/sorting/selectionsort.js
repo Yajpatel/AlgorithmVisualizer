@@ -1,4 +1,5 @@
 async function selectionsort(){
+    isRunning = true;
     console.log(array);
     console.log(bars.map(bar => bar.style.height));
     for(let i = 0;i<array.length;i++){

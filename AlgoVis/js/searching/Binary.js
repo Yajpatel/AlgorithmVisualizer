@@ -63,8 +63,6 @@ async function binarySearch(target) {
 
 
 
-
-
 ////////////////////  Rough Workkk ////////////////////
 // function binarySearch(target) {
 //     let left = 0, right = array.length - 1;

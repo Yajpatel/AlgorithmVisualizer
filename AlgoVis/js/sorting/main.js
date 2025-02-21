@@ -2,10 +2,12 @@
 let array = [];
 let arraySize = 10; // Default size
 let arraySpeed = 500; // Default speed
+let isRunning = false;
 // let c_delay = 2000;
 const randomizeBtn = document.querySelector("#arr_randomize");
 const sortBtn = document.querySelector("#arr_sort");
-const algoSelect = document.querySelector("#algoselected");
+
+const algoSelect = document.getElementById("algoselected");
 
 const speed = document.getElementById("arr_speed");
 const size = document.getElementById("arr_size");
@@ -18,6 +20,82 @@ size.addEventListener("input", function () {
     updateSize(parseInt(size.value));
 });
 
+algoSelect.oninput = () => {
+    let color1 = document.querySelector(".color1");
+    let label1 = document.querySelector(".label1");
+
+    let color2 = document.querySelector(".color2");
+    let label2 = document.querySelector(".label2");
+
+    let color3 = document.querySelector(".color3");
+    let label3 = document.querySelector(".label3");
+
+    color1.style.visibility = "visible";
+    label1.style.visibility = "visible";
+    color2.style.visibility = "visible";
+    label2.style.visibility = "visible";
+    color3.style.visibility = "visible";
+    label3.style.visibility = "visible";
+
+    if (algoSelect.value === "bubble") {
+        color1.style.backgroundColor = "pink";
+        label1.textContent = "Comparing Elements";
+
+        color2.style.backgroundColor = "red";
+        label2.textContent = "Swapping Elements";
+
+        color3.style.backgroundColor = "orange";
+        label3.textContent = "Sorted Elements";
+    } 
+    else if (algoSelect.value === "selection") {
+        color1.style.backgroundColor = "red";
+        label1.textContent = "Finding Minimum Element";
+
+        color2.style.backgroundColor = "magenta";
+        label2.textContent = "Swapping Minimum";
+
+        color3.style.backgroundColor = "orange";
+        label3.textContent = "Sorted Elements";
+    } 
+    else if (algoSelect.value === "insertion") {
+        color1.style.backgroundColor = "magenta";
+        label1.textContent = "Picking Element";
+
+        color2.style.backgroundColor = "red";
+        label2.textContent = "Shifting Elements";
+
+        color3.style.backgroundColor = "orange";
+        label3.textContent = "Sorted Elements";
+    } 
+    else if (algoSelect.value === "merge") {
+        color1.style.backgroundColor = "magenta";
+        label1.textContent = "comparing";
+
+        color2.style.backgroundColor = "blue";
+        label2.textContent = "mark sorted";
+
+        color3.style.backgroundColor = "orange";
+        label3.textContent = "Sorted";
+    } 
+    else if (algoSelect.value === "quick") {
+        color1.style.backgroundColor = "magenta";
+        label1.textContent = "Choosing Pivot";
+
+        color2.style.backgroundColor = "blue";
+        label2.textContent = "Partitioning Elements";
+
+        color3.style.backgroundColor = "orange";
+        label3.textContent = "Sorted Elements";
+    } 
+    else {
+        color1.style.visibility = "hidden";
+        label1.style.visibility = "hidden";
+        color2.style.visibility = "hidden";
+        label2.style.visibility = "hidden";
+        color3.style.visibility = "hidden";
+        label3.style.visibility = "hidden";
+    }
+};
 function updateSpeed(speedValue) {
     switch (speedValue) {
         case 1: arraySpeed = 1700; break; // Slowest
@@ -79,9 +157,16 @@ window.onload = () => generateArray();
 let bars = [];
 
 randomizeBtn.addEventListener("click",()=>{
-    generateArray()
+    if(isRunning){
+        location.reload(); // Reloads the page
+    }
+    else{
+        generateArray()
+    }
 });
-
+// randomizeBtn.addEventListener("click",()=>{
+//     location.reload(); // Reloads the page
+// });
 // Generate a random array and
 // push to array
 function generateArray() {

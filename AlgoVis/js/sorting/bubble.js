@@ -1,5 +1,5 @@
 async function bubblesort() {
-
+    isRunning = true;
     for (let i = 0; i < array.length - 1; i++) {
         for (let j = 0; j < array.length - i - 1; j++) {
             // pink while the bars being compared
@@ -71,6 +71,8 @@ async function swapBarsforbubble(index1, index2) {
     bars[index2] = temp;
 }
 
+//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 // async function swapBars(index1, index2) {
 //     // Access bar elements by their DOM references
 //     let bar1 = bars[index1];
