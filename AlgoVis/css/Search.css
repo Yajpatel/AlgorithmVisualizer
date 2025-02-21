@@ -14,6 +14,10 @@ body {
     padding: 0px;
 }
 
+.nav-logo .home{
+    text-decoration: none;
+    color: #fff;
+}
 /* Main Navbar */
 nav.content {
     display: flex;
@@ -238,17 +242,20 @@ nav.content {
     
 }
 /* ============== js ===========*/
-/* .default{
-    background-color: #D4EBF8;
-    height: 70px;
-    width: 70px;
-} */
-.iterate{
-    background-color: red;
-}
+/* =============== Linear ====================== */
+
 .grow{
     transform: scale(1.4);
     background-color: green;
     margin: 20px;
     transition: all 0.5s ease;
 }
+/* =============================================== */
+.default{
+    background-color: #D4EBF8;
+    
+}
+.iterate {
+    background-color: red; /* Current searching element */
+}
+/* ================= Binary ================== */

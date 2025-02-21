@@ -3,7 +3,6 @@ let array = [];
 let arraySize = 18; // Default size
 let arraySpeed = 500; // Default speed
 
-
 const resetbtn = document.getElementById("reset");
 const searchbtn = document.getElementById("search");
 const searchSelect = document.getElementById("searchselected");
@@ -77,7 +76,13 @@ function updateSize(sizeValue) {
 window.onload = () => generateArray();
 
 resetbtn.addEventListener("click",()=>{
-    generateArray()
+    if(searchSelect.value == "Binary"){
+        generateSortedArray();
+    }
+    else{
+        generateArray();
+    }
+    
 });
 
 // Generate a random array and
@@ -89,7 +94,15 @@ function generateArray() {
     }
     visualizearray(); // Visualize the array
 }
-
+//////////// sorted array for binary
+function generateSortedArray(){
+    array = [];
+    for (let i = 0; i < arraySize; i++) {
+        array.push(Math.floor(Math.random() * 100));
+    }
+    array.sort((a, b) => a - b); // Sort the array for Binary Search
+    visualizearray(); // Visualize the array
+}
 function visualizearray(){
     let container = document.getElementById("x");
     container.innerHTML = "";
@@ -106,6 +119,9 @@ function visualizearray(){
         box.appendChild(innerbox);
     }
 }
+
+
+////////////////////////////////////////////////////////////////////
 searchbtn.addEventListener("click", () => {
     inputvalue(); // Call the inputvalue function when the search button is clicked
 });
@@ -139,7 +155,12 @@ function search(target) {
 
 searchSelect.oninput = ()=>{
     heading();
+    if (searchSelect.value === "Binary") {
+        array.sort((a, b) => a - b); // Sort the array for Binary Search
+    }
+    visualizearray();
 }
+
 function heading(){
     let heading = document.getElementById('heading');
     switch (searchSelect.value) {

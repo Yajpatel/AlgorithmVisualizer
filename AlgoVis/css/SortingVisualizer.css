@@ -14,6 +14,11 @@ body {
     padding: 0px;
 }
 
+.nav-logo .home{
+    text-decoration: none;
+    color: #fff;
+}
+
 /* Main Navbar */
 nav.content {
     display: flex;

@@ -13,6 +13,16 @@ body {
     margin: 0px;
     padding: 0px;
     /* background-color: wheat; */
+    
+}
+.background-img{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Ensures the video covers the entire screen */
+    z-index: -1; /* Sends the video behind other content */
 }
 
 /* Navbar styling */
@@ -24,7 +34,10 @@ body {
      /* Align items vertically */
     justify-content: space-between; /* Space out head and links */
 }
-
+.navbar .home{
+    text-decoration: none;
+    color: #fff;
+}
 /* Head section styling */
 .head {
     color: #fff;
