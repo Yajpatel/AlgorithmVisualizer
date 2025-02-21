@@ -19,7 +19,7 @@ async function linearSearch(target) {
         if (array[i] == target) {
             elements[i].classList.remove('iterate'); // remove red if it is the target
             elements[i].classList.add('grow'); // add red to visiting div
-            message.innerHTML = `Element ${array[i]} found at index "${i}"`;
+            message.innerHTML = `Element ${target} found at index "${i}"`;
             flag = false;
             return;
         } 

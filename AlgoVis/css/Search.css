@@ -253,9 +253,14 @@ nav.content {
 /* =============================================== */
 .default{
     background-color: #D4EBF8;
-    
 }
 .iterate {
     background-color: red; /* Current searching element */
 }
 /* ================= Binary ================== */
+/* ==================   ============== */
+.scale{
+    scale: 1.4;
+    margin: 20px;
+    transition: all 0.5s ease;
+}
