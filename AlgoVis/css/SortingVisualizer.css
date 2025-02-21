@@ -96,7 +96,7 @@ select:hover,
 
 /* =========================================== */
 .labelandcontrol{
-    height: 4rem;
+    height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -168,4 +168,35 @@ select:hover,
 }
 
 /* ================================================ */
+.message{
+    visibility: hidden;
+}
 
+@media only screen and (orientation: portrait)   {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        background-color: #f0f0f0;
+        visibility: hidden;
+    }
+
+    .message {
+        visibility: visible;
+        font-size: 2rem;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        position: absolute;
+
+    }
+
+    /* You can add further styling to ensure content doesn't overlap or looks broken in portrait mode */
+    .array-container {
+        display: none; /* Hide the content when in portrait mode */
+    }
+}
