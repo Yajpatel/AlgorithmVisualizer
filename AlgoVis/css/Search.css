@@ -286,3 +286,21 @@ input[type="range"] {
     transition: all 0.5s ease;
 }
 
+.learning {
+    position: absolute;
+    top: 30%;
+    left: 1%;
+    background: linear-gradient(135deg, #ffffff, #f1f1f1); /* Soft gradient background */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Softer shadow for a smooth effect */
+    border-radius: 15px; /* Increased border-radius for a sleek look */
+    padding: 15px 20px; /* More padding for better spacing */
+    max-width: 250px; /* Set a max width to prevent overflow */
+    border-left: 5px solid #007bff; /* Stylish left border */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    font-size: 16px; /* Slightly larger font for readability */
+}
+
+.learning:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}

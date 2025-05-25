@@ -8,6 +8,11 @@ async function binarySearch(target) {
     // initially color all elements red
     let boxes = document.getElementsByClassName("box");
 
+    let learn = document.getElementsByClassName("learning");
+    let work = document.getElementById("working");
+    work.innerHTML = "";
+    let count = 1;
+
     //for removing previous effects
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].classList.remove("scale"); 
@@ -44,12 +49,25 @@ async function binarySearch(target) {
             }
             flag = false;
             message.innerHTML = `Element ${target} found at index "${mid}"`;
+            work.innerHTML += `<br>Element found`;
             return;
         } else if (array[mid] < target) {
+            work.innerHTML += `<br>${count} loop completed`;
+
+            count++;
+            work.innerHTML += `<br>Searching in Second Half`;
+            await new Promise(resolve => setTimeout(resolve, arraySpeed));
+            
             left = mid + 1; // Narrow down to right half
         } else {
+            work.innerHTML += `<br>${count} loop completed`;
+            
+            count++;
+            work.innerHTML += `<br>Searching in First Half`;
+            await new Promise(resolve => setTimeout(resolve, arraySpeed));
             right = mid - 1; // Narrow down to left half
         }
+        
     }
 
     // If not found, reset colors
